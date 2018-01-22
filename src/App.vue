@@ -67,6 +67,7 @@ export default {
 </script>
 
 <style>
+/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */
 @font-face {
   font-family: DeliciousRoman;
   src: url('./assets/Delicious-Roman.otf');
