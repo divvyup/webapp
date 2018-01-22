@@ -20,7 +20,7 @@
       </tbody>
       </table>
       <hr>
-      <a class="button is-black is-outlined" v-on:click="login()"><b-icon
+      <a class="button is-black is-outlined" v-on:click="gtgroup(group.id)"><b-icon
           icon="receipt"
           size="is-medium">
       </b-icon></a>
@@ -51,18 +51,22 @@ export default {
       this.$http.get(API + '/api/v1/user').then(response => {
         // Now that we have done this, load up 5 or less of their groups
         var leng = Math.min(5, response.body.groups.length)
-        console.log(this.groupids)
         for (var i = 0; i < leng; i++) {
           this.$http.get(API + '/api/v1/group/' + response.body.groups[i]).then(response => {
+            console.log(response)
             this.groups.push(response.body)
+            console.log(this.groups)
           })
         }
       }, response => {
         this.$toast.open({
-          message: 'Please login to view your groups!',
+          message: response.body.message || 'Please login to view your groups!',
           position: 'is-bottom',
           duration: 5000})
       })
+    },
+    gtgroup: function (id) {
+      this.$router.push('/group/' + id)
     }
   },
   created () {
@@ -96,5 +100,6 @@ a {
   margin: 0 auto;
   max-width: 400px;
   padding-top: 20px;
+  width: 95%;
 }
 </style>

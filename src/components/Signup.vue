@@ -26,7 +26,7 @@
 <script>
 import API from './api.js'
 export default {
-  name: 'Home',
+  name: 'Signup',
   data () {
     return {
       username: '',
@@ -72,7 +72,7 @@ html,body,div {
   padding-top: 20px;
   margin: 0 auto;
   text-align: left;
-  width: 80%;
+  width: 95%;
   max-width: 250px;
 }
 </style>

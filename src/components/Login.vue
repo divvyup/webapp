@@ -22,7 +22,7 @@
 <script>
 import API from './api.js'
 export default {
-  name: 'Home',
+  name: 'Login',
   data () {
     return {
       username: '',
@@ -40,7 +40,7 @@ export default {
         this.$router.push('/')
       }, response => {
         this.$toast.open({
-          message: response.body.message || 'There was a problem creating your account.',
+          message: response.body.message || 'There was a problem logging you in.',
           position: 'is-bottom',
           duration: 5000})
       })
@@ -68,7 +68,7 @@ html,body,div {
   padding-top: 20px;
   margin: 0 auto;
   text-align: center;
-  width: 80%;
+  width: 95%;
   max-width: 250px;
 }
 </style>
