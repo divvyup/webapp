@@ -6,7 +6,7 @@ var app = express()
 app.use(serveStatic('dist', {'index': ['index.html']}))
 
 app.use(function(req, res) {
-  res.sendFile(__dirname + '404.html')
+  res.sendFile(__dirname + '/404.html')
 })
 
 app.listen(3075)

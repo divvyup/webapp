@@ -2,7 +2,7 @@ FROM node:9.4.0-alpine
 RUN apk update && apk add git
 RUN mkdir -p /usr/build/app
 WORKDIR /usr/build/app
-RUN git clone https://github.com/divvyup/webapp
+RUN git clone https://github.com/divvyup/webapp && cd webapp && git pull
 WORKDIR /usr/build/app/webapp
 RUN npm install
 RUN npm run build
